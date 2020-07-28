@@ -19,5 +19,13 @@ namespace GraphCycles
             return (this.Start == toCompare.Start && this.End == toCompare.End) ||
                    (this.Start == toCompare.End && this.End == toCompare.Start);
         }
+
+        public override int GetHashCode() {
+            return (Start, End).GetHashCode();
+        }
+
+        public override string ToString() {
+            return Start +"->"+ End;
+        }
     }
 }
